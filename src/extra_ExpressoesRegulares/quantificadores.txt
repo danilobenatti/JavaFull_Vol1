@@ -1,0 +1,9 @@
+Lista de quantificadores
+
+Expressão	|	Descrição
+	X{n}	| X procura a ocorrência de um caractere 'n' vezes
+	X{n,}	| X pelo menos 'n' vezes
+	X{n,m}	| X pelo menos 'n' vezes, mas não mais que 'm'
+	X?		| 0 (zero) ou 1 (uma) vez
+	X*		| 0 (zero) ou mais vezes
+	X+		| 1 (uma) ou mais vezes

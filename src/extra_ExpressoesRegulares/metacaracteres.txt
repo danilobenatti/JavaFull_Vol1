@@ -1,0 +1,44 @@
+Lista de alguns metacaracteres
+
+https://docs.oracle.com/javase/tutorial/essential/regex/intro.html
+https://docs.oracle.com/javase/tutorial/essential/regex/pre_char_classes.html
+Caracter|	Descrição												| Metacaractere
+	.	| Busca qualquer caractere									|	
+	\d	| Busca qualquer número										|	[0-9]
+	\D	| Busca qualquer caractere que NÃO[^] seja número			|	[^0-9]
+	\w	| Busca qualquer caractere de letrar e números				|	[a-zA-Z_0-9]
+	\W	| Busca qualquer caractere que NÃO[^] sejam letras e números|	[^\w]
+	\s	| Busca qualquer caractere de espaço em branco, tabulações	|	[\t\n\x0b\f\r]
+	\S	| Busca qualquer caractere SEM[^] espaço em branco			|	[^\s]
+
+extra:
+
+	|	| Find a match for any one of the patterns separated by | as in: cat|dog|fish
+	^	| Finds a match as the beginning of a string as in: ^Hello
+	$	| Finds a match at the end of the string as in: World$
+	\b	| Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b
+\uxxxx	| Find the Unicode character specified by the hexadecimal number xxxx
+
+Metacaracteres de fronteira
+*^	Inicia
+*$	Finaliza
+*|	Ou(condição)
+
+Agrupadores
+*[...]			Agrupamento
+*[a-z]			Alcance
+*[a-e][i-u]		União
+*[a-z&&[aeiou]]	Interseção
+*[^abc]			Exceção
+*[a-z&&[^m-p]]	Subtração
+*\x				Fuga literal
+
+https://docs.oracle.com/javase/tutorial/essential/regex/char_classes.html
+Construct		| Description
+[abc]			| a, b, or c (simple class)
+[^abc]			| Any character except a, b, or c (negation)
+[a-zA-Z]		| a through z, or A through Z, inclusive (range)
+[a-d[m-p]]		| a through d, or m through p: [a-dm-p] (union)
+[a-z&&[def]]	| d, e, or f (intersection)
+[a-z&&[^bc]]	| a through z, except for b and c: [ad-z] (subtraction)
+[a-z&&[^m-p]]	| a through z, and not m through p: [a-lq-z] (subtraction)
