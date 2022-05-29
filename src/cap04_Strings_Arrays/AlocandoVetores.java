@@ -13,18 +13,18 @@ public class AlocandoVetores {
 		
 		final int TAMANHO_VETOR = 5;
 		
-		int vetorInteiro[];
+		int[] vetorInteiro;
 		vetorInteiro = new int[10];
 		
-		char vetorChar[] = new char[TAMANHO_VETOR];
+		char[] vetorChar = new char[TAMANHO_VETOR];
 		
 		boolean[] vetorBoolean = new boolean[10];
 		
 		String[] vetorStringWrapper = { "primeiro", "segundo", "terceiro", "quarto" };
 		
-		Integer vetorIntegerWrapper[] = new Integer[2];
+		Integer[] vetorIntegerWrapper = new Integer[2];
 		
 		@SuppressWarnings("deprecation")
-		Boolean vetorBooleanWrapper[] = { new Boolean(true), new Boolean(false) };
+		Boolean[] vetorBooleanWrapper = { new Boolean(true), new Boolean(false) };
 	}
 }

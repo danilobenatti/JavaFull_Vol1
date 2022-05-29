@@ -10,8 +10,9 @@ public class UsandoArrayMultidimensional {
 	
 	public static void main(String[] args) {
 		
-		final int QTD_LINHAS = 4, QTD_COLUNAS = 2;
-		String alunosNotas[][] = new String[QTD_LINHAS][QTD_COLUNAS];
+		final int QTD_LINHAS = 4;
+		final int QTD_COLUNAS = 2;
+		String[][] alunosNotas = new String[QTD_LINHAS][QTD_COLUNAS];
 		
 		String[] alunos = { "Paulo", "Matias", "Benabe", "Esdalena" };
 		Double[] notas = { 10.0, 6.0, 9.0, 9.5 };
@@ -32,12 +33,12 @@ public class UsandoArrayMultidimensional {
 		alunosNotas[3][0] = alunos[3];
 		alunosNotas[3][1] = String.valueOf(notas[3]);
 		
-		System.out.printf("| %8s| %8s|\n", "Alunos", "Notas");
+		System.out.printf("| %8s| %8s|%n", "Alunos", "Notas");
 		for (int i = 0; i < QTD_LINHAS; i++) {
 			for (int j = 0; j < QTD_COLUNAS; j++) {
 				System.out.printf("| %8s", alunosNotas[i][j]);
 			}
-			System.out.printf("|\n");
+			System.out.printf("|%n");
 		}
 	}
 }

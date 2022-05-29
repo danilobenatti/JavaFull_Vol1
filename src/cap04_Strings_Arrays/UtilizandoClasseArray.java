@@ -16,11 +16,11 @@ public class UtilizandoClasseArray {
 		double[] salarioBase = { 1100.5, 1220.53, 1178.05, 1800.0 };
 		String[] cargosDescricao = { "Servente", "Cozinheiro", "Barman", "Gerente" };
 		
-		System.out.printf("\nFolha de Pagamento:\n|id.| %12s | %11s |\n", "Cargo",
+		System.out.printf("%nFolha de Pagamento:%n|id| %12s | %11s |%n", "Cargo",
 				"Salário");
 		
 		for (int i = 0; i < ITENS; i++) {
-			System.out.printf("| %d | %12s | R$ %,3.2f |\n", i, cargosDescricao[i],
+			System.out.printf("| %d| %12s | R$ %,3.2f |%n", i, cargosDescricao[i],
 					salarioBase[i]);
 		}
 		
@@ -35,7 +35,7 @@ public class UtilizandoClasseArray {
 		
 		int indice = Arrays.binarySearch(salarioBase, 1800.0);
 		System.out.printf(
-				"\nFuncionário Selecionado\n|id.| %12s | %11s |\n| %d | %12s | R$ %,3.2f |\n",
+				"%nFuncionário Selecionado%n|id| %12s | %11s |%n| %d| %12s | R$ %,3.2f |%n",
 				"Cargo", "Salário", indice, cargosDescricao[indice], salarioBase[indice]);
 	}
 }
