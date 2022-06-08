@@ -21,6 +21,7 @@ public class ArraySort {
 
 		List<Integer> itens = Arrays.asList(11, 10, 16, 5, 85, 21, 50, 2);
 		itens.sort(null);
+
 		if (!itens.isEmpty()) {
 			int i = itens.size();
 			int j = 1;
@@ -33,23 +34,23 @@ public class ArraySort {
 			}
 			System.out.print(" Fim!\n");
 		}
-		itens.forEach(item -> System.out.print((!itens.isEmpty()) ? 
-				((itens.get(itens.size() - 1) == item.intValue()) ? 
-						item + " Fim!\n" : item + " - ") : null));
+
+		itens.forEach(item -> System.out.print(
+				(!itens.isEmpty()) ? (
+						(itens.get(itens.size() - 1) != (item.intValue()) ? item + " - " : item + " Fim!\n")) : null)
+				);
 
 		int[] numbers = { 4, 9, 1, 3, 2, 8, 7, 0, 6, 5 };
 		System.out.println("\n" + beforeStr + Arrays.toString(numbers));
-		
 		Arrays.sort(numbers, 0, 5);
 		System.out.println("\nSorted a half: " + Arrays.toString(numbers));
-		System.out.println("\nSort by order Numerical\n" + beforeStr
-				+ Arrays.toString(numbers));
+		
+		System.out.println("\nSort by order Numerical\n" + beforeStr + Arrays.toString(numbers));
 		Arrays.sort(numbers);
 		System.out.println(afterStr + Arrays.toString(numbers));
 
 		String[] fruits = { "Orange", "Grape", "Apple", "Lemon", "Banana" };
-		System.out.println("\nSort by order Alphabetical\n" + beforeStr
-				+ Arrays.toString(fruits));
+		System.out.println("\nSort by order Alphabetical\n" + beforeStr + Arrays.toString(fruits));
 		Arrays.sort(fruits);
 		System.out.println(afterStr + Arrays.toString(fruits));
 
@@ -104,8 +105,7 @@ public class ArraySort {
 			System.err.print(ex);
 		}
 
-		System.out.println(
-				"\nSort by Date\n" + beforeStr + Arrays.toString(dates));
+		System.out.println("\nSort by Date\n" + beforeStr + Arrays.toString(dates));
 		Arrays.sort(dates);
 		System.out.println(afterStr + Arrays.toString(dates));
 	}

@@ -34,7 +34,7 @@ public class DateWorkingExamples {
 		}
 
 		// Creating a SimpleDateFormat For a Specific Locale
-		String pattern = "EEEEE dd MMMMM yyyy HH:mm:ss.SSSZ";
+		String pattern = "EEEEE dd MMMMM yyyy HH:mm:ss.SSS Z z";
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern,
 				new Locale("pt", "BR"));
 		String date = simpleDateFormat.format(new Date());
