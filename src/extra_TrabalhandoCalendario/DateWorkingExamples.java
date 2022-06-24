@@ -1,5 +1,6 @@
 package extra_TrabalhandoCalendario;
 
+import java.text.DateFormat;
 import java.text.FieldPosition;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -39,5 +40,13 @@ public class DateWorkingExamples {
 				new Locale("pt", "BR"));
 		String date = simpleDateFormat.format(new Date());
 		System.out.println(date);
+		
+		// Date and DateFormat
+		DateFormat format = DateFormat.getDateInstance(DateFormat.SHORT);
+		System.out.println(format.format(new Date()));
+		System.out.println(DateFormat.getDateInstance(DateFormat.MEDIUM)
+				.format(new Date()));
+		System.out.println(DateFormat.getDateInstance(DateFormat.LONG)
+				.format(new Date()));
 	}
 }
