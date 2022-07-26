@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.Formatter;
 import java.util.Locale;
 
@@ -25,19 +26,16 @@ public class NumberWorkingExamples {
 		float num = 2.456534f;
 		try (Formatter formatter = new Formatter()) {
 			formatter.format(localeBr, "%.2f", num);
-			System.out
-					.println("Upto 2 decimal places: " + formatter.toString());
+			System.out.println("Upto 2 decimal places: " + formatter.toString());
 		}
 
 		// Exemplo 3
-		BigDecimal bd = BigDecimal.valueOf(num).setScale(3,
-				RoundingMode.HALF_EVEN);
-		System.out.println("Upto 3 HALF_EVEN: " + bd.doubleValue());
-		BigDecimal bdDown = BigDecimal.valueOf(num).setScale(3,
-				RoundingMode.DOWN);
-		System.out.println("Upto 3 DOWN: " + bdDown.doubleValue());
+		BigDecimal bd = BigDecimal.valueOf(num).setScale(2, RoundingMode.HALF_EVEN);
+		System.out.println("Upto 2 HALF_EVEN: " + bd.doubleValue());
+		BigDecimal bdDown = BigDecimal.valueOf(num).setScale(2, RoundingMode.DOWN);
+		System.out.println("Upto 2 DOWN: " + String.format(localeBr, "%.4f", bdDown.doubleValue()));
 		BigDecimal bdUp = BigDecimal.valueOf(num).setScale(3, RoundingMode.UP);
-		System.out.println("Upto 3 UP: " + bdUp.doubleValue());
+		System.out.println("Upto 2 UP: " + bdUp.doubleValue());
 
 		// Exemplo 4
 		DecimalFormat decimalFormat = new DecimalFormat("#.#");
@@ -49,8 +47,39 @@ public class NumberWorkingExamples {
 		double d2 = 2500.979;
 		NumberFormat numberFormat = NumberFormat.getNumberInstance(localeBr);
 		numberFormat.setMaximumFractionDigits(2);
-		System.out.println("d1 - 2 decimal places: " + numberFormat.format(d1));
+		numberFormat.setMinimumFractionDigits(2);
+		System.out.println("d1(" + d1 + ") - 2 decimal places: "
+				+ numberFormat.format(d1));
 		numberFormat.setMaximumFractionDigits(1);
-		System.out.println("d2 - 1 decimal places: " + numberFormat.format(d2));
+		numberFormat.setMinimumFractionDigits(1);
+		System.out.println("d2(" + d2 + ") - 1 decimal places: "
+				+ numberFormat.format(d2));
+
+		displayNumber(123456.789, localeUs);
+		displayNumber(345987.246, localeBr);
+
+		String dollar = "$1,998.08";
+		String real = "R$ 3.999,50";
+		try {
+			System.out.println(parse(dollar, localeUs));
+			System.out.println(parse(real, localeBr));
+		} catch (ParseException ex) {
+			ex.printStackTrace();
+		}
+	}
+
+	public static void displayNumber(Object number, Locale locale) {
+		NumberFormat numberFormat = NumberFormat.getNumberInstance(locale);
+		String numOut = numberFormat.format(number);
+		System.out.println(numOut + "   " + locale.toString());
+	}
+
+	public static BigDecimal parse(String amount, Locale locale)
+			throws ParseException {
+		NumberFormat nf = NumberFormat.getNumberInstance(locale);
+		if (nf instanceof DecimalFormat) {
+			((DecimalFormat) nf).setParseBigDecimal(true);
+		}
+		return (BigDecimal) nf.parse(amount.replaceAll("[^\\d.,]", ""));
 	}
 }
