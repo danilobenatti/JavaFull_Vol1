@@ -6,7 +6,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.SimpleTimeZone;
 import java.util.TimeZone;
@@ -20,9 +19,13 @@ public class DateWorkingExamples {
 		
 		Locale[] availableLocales = Locale.getAvailableLocales();
 		System.out.println(availableLocales);
+		System.out.println(Locale.getISOCountries());
+		System.out.println(Locale.getISOLanguages());
+		System.out.println(Locale.getDefault());
 		
 		String[] availableIDs = TimeZone.getAvailableIDs();
 		System.out.println(availableIDs);
+		System.out.println(TimeZone.getDefault().getDisplayName());
 		
 		Locale localeBr = new Locale("pt", "BR");
 		Locale localeUs = new Locale("en", "US");
