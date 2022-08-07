@@ -90,5 +90,9 @@ public class DateWorkingExamples {
 		
 		System.out.println("DateFormat[full_US]: " + DateFormat
 				.getDateInstance(DateFormat.FULL, localeUs).format(now));
+		
+		SimpleDateFormat sdf5 = new SimpleDateFormat("dd/MM/yyyy  HH:mm:ss");
+		sdf5.setTimeZone(TimeZone.getTimeZone("America/Toronto"));
+		System.out.println(sdf5.format(now));
 	}
 }
