@@ -69,6 +69,12 @@ public class DateWorkingExamples {
 		String date2 = sdf4.format(now);
 		System.out.println("SimpleDateFormat for Specific Locale: " + date2);
 		
+		System.out.println(DateFormat
+				.getDateInstance(DateFormat.ERA_FIELD, localeUs).format(now));
+		System.out.println(DateFormat
+				.getDateInstance(DateFormat.ERA_FIELD, localeBr).format(now));
+		System.out.println(new SimpleDateFormat("yyyy", localeBr).format(now));
+		
 		// Date and DateFormat
 		DateFormat format = DateFormat.getDateInstance(DateFormat.SHORT);
 		System.out.println("Date and DateFormat[short]: " + format.format(now));
