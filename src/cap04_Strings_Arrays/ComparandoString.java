@@ -36,14 +36,14 @@ public class ComparandoString {
 			System.out.println("Acesso Negado!");
 		}
 		
-		var nome1 = "João";
-		var nome2 = "João";
-		var nome3 = new String("João");
-		var igual1 = nome1 == nome2 ? "sim" : "não";
+		String nome1 = "João";
+		String nome2 = "João";
+		String nome3 = new String("João");
+		String igual1 = nome1 == nome2 ? "sim" : "não";
 		System.out.println("1) Os nomes são iguais? " + igual1);
-		var igual2 = nome1 == nome3 ? "sim" : "não";
+		String igual2 = nome1 == nome3 ? "sim" : "não";
 		System.out.println("2) Os nomes são iguais? " + igual2);
-		var igual3 = nome1.equals(nome3) ? "sim" : "não";
+		String igual3 = nome1.equals(nome3) ? "sim" : "não";
 		System.out.println("3) Os nomes são iguais? " + igual3);
 	}
 }

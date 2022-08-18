@@ -9,11 +9,11 @@ public class LoopingBreak {
 
 	public static void main(String[] args) {
 
-		var passmark = 13;
-		var score = 0;
-		var passed = false;
+		int passmark = 13;
+		int score = 0;
+		boolean passed = false;
 		int[] scores = { 4, 6, 2, 8, 12, 35, 9 };
-		for (var iterableScore : scores) {
+		for (int iterableScore : scores) {
 			score = iterableScore;
 			if (iterableScore >= passmark) {
 				passed = true;
